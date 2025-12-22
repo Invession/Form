@@ -97,10 +97,6 @@ export default {
           "0%, 100%": { opacity: "0.4" },
           "50%": { opacity: "0.8" },
         },
-        "glow-pulse": {
-          "0%, 100%": { boxShadow: "0 0 40px hsl(25 95% 53% / 0.25)" },
-          "50%": { boxShadow: "0 0 80px hsl(25 95% 53% / 0.5)" },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -110,7 +106,7 @@ export default {
         "scale-in": "scale-in 0.4s ease-out forwards",
         float: "float 20s ease-in-out infinite",
         pulse: "pulse 4s ease-in-out infinite",
-        "glow-pulse": "glow-pulse 3s ease-in-out infinite",
+        
       },
     },
   },
