@@ -20,9 +20,9 @@ export function Footer() {
           {/* Brand */}
           <Link to="/" className="flex items-center gap-2 group">
             <div className="w-8 h-8 rounded-lg bg-accent-gradient flex items-center justify-center shadow-accent group-hover:shadow-glow transition-shadow duration-300">
-              <span className="text-accent-foreground font-bold text-lg">N</span>
+              <span className="text-accent-foreground font-bold text-lg">F</span>
             </div>
-            <span className="font-semibold text-xl text-foreground">Nexus</span>
+            <span className="font-semibold text-xl text-foreground">Form Spotter</span>
           </Link>
 
           {/* Navigation Links */}
@@ -42,7 +42,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="mt-8 pt-8 border-t border-border/50 text-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Nexus. All rights reserved.
+            © {new Date().getFullYear()} Form Spotter. All rights reserved.
           </p>
         </div>
       </div>
