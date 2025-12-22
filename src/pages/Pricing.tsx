@@ -6,23 +6,23 @@ import { Link } from "react-router-dom";
 const features = [
   {
     icon: Users,
-    title: "Tailored Solutions",
-    description: "Custom packages designed specifically for your team's unique needs and goals.",
+    title: "Unlimited Clients",
+    description: "Train as many clients as you want with full AI form analysis on every session.",
   },
   {
     icon: Zap,
-    title: "Flexible Pricing",
-    description: "Scalable pricing that grows with your business, no hidden fees or surprises.",
+    title: "Real-Time Analysis",
+    description: "Instant form feedback powered by advanced computer vision and machine learning.",
   },
   {
     icon: Shield,
-    title: "Enterprise Security",
-    description: "Advanced security features including SSO, SAML, and dedicated infrastructure.",
+    title: "HIPAA Compliant",
+    description: "Enterprise-grade security to protect your clients' health and training data.",
   },
   {
     icon: HeadphonesIcon,
-    title: "Dedicated Support",
-    description: "24/7 priority support with a dedicated account manager for your team.",
+    title: "Trainer Support",
+    description: "Dedicated onboarding and ongoing support to maximize your coaching results.",
   },
 ];
 
@@ -43,10 +43,10 @@ const Pricing = () => {
             Pricing
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mt-4 mb-6">
-            Custom solutions for <span className="text-gradient">your team</span>
+            Plans built for <span className="text-gradient">trainers</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Every business is unique. Let's discuss your needs and create a plan that works perfectly for you.
+            Whether you're a solo trainer or run a full gym, we have a plan that fits your coaching needs.
           </p>
         </div>
       </section>
@@ -64,10 +64,10 @@ const Pricing = () => {
 
             <div className="mt-4">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Let's Talk
+                Let's Build Your Plan
               </h2>
               <p className="text-lg text-muted-foreground max-w-xl mx-auto mb-8 leading-relaxed">
-                Our team will work with you to understand your requirements and create a customized pricing plan that fits your budget and scale.
+                Tell us about your training practice—how many clients you coach, your facility setup, and your goals. We'll create a custom plan for you.
               </p>
 
               <Button variant="accent" size="xl" asChild className="animate-glow-pulse">
@@ -124,11 +124,11 @@ const Pricing = () => {
 
         <div className="container-tight mx-auto text-center relative">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Ready to get started?
+            Ready to coach smarter?
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
-            Our team is here to help. Get in touch and we'll get back to you
-            within 24 hours.
+            See how Form Spotter can help you deliver better results for your clients.
+            Schedule a demo today.
           </p>
           <Button variant="accent" size="xl" asChild className="animate-glow-pulse">
             <Link to="/contact">

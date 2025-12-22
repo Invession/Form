@@ -82,11 +82,11 @@ const Contact = () => {
             Contact Us
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mt-4 mb-6">
-            Let's start a <span className="text-gradient">conversation</span>
+            Let's elevate your <span className="text-gradient">coaching</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Have a question or want to learn more? We'd love to hear from you.
-            Our team is ready to help.
+            Ready to give your clients the edge? Schedule a demo or ask us anything
+            about how Form Spotter can transform your training practice.
           </p>
         </div>
       </section>
@@ -101,8 +101,8 @@ const Contact = () => {
                 Get in touch
               </h2>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                Whether you're curious about features, pricing, or need a demo,
-                our team is ready to answer all your questions.
+                Want to see AI form analysis in action? Have questions about how
+                it works for your gym or training practice? We're here to help.
               </p>
 
               <div className="space-y-4">
@@ -170,11 +170,11 @@ const Contact = () => {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="company">Company (Optional)</Label>
+                      <Label htmlFor="company">Gym / Facility (Optional)</Label>
                       <Input
                         id="company"
                         name="company"
-                        placeholder="Your company name"
+                        placeholder="Your gym or training facility"
                         value={formData.company}
                         onChange={handleChange}
                         className="h-12 bg-background/50 border-border/50 focus:border-accent"
@@ -186,7 +186,7 @@ const Contact = () => {
                       <Textarea
                         id="message"
                         name="message"
-                        placeholder="Tell us about your project or question..."
+                        placeholder="Tell us about your training practice, number of clients, and what you're looking for..."
                         value={formData.message}
                         onChange={handleChange}
                         required
