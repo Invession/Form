@@ -69,13 +69,20 @@ const Contact = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="section-padding bg-hero-gradient">
-        <div className="container-tight mx-auto text-center">
+      <section className="section-padding bg-background relative overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 grid-pattern opacity-30" />
+          <div className="orb orb-1 -top-[200px] -right-[200px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-glow" />
+        </div>
+
+        <div className="container-tight mx-auto text-center relative">
           <span className="text-sm font-medium text-accent uppercase tracking-wider">
             Contact Us
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mt-4 mb-6">
-            Let's start a conversation
+            Let's start a <span className="text-gradient">conversation</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Have a question or want to learn more? We'd love to hear from you.
@@ -85,7 +92,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="section-padding bg-background">
+      <section className="section-padding bg-background relative">
         <div className="container-wide mx-auto">
           <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
             {/* Contact Info */}
@@ -98,14 +105,14 @@ const Contact = () => {
                 our team is ready to answer all your questions.
               </p>
 
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {contactInfo.map((item) => (
                   <a
                     key={item.label}
                     href={item.href}
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-secondary/50 transition-colors group"
+                    className="flex items-start gap-4 p-4 rounded-xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-accent/30 transition-all group"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors">
+                    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 group-hover:shadow-accent transition-all duration-300">
                       <item.icon className="w-5 h-5 text-accent" />
                     </div>
                     <div>
@@ -121,86 +128,91 @@ const Contact = () => {
 
             {/* Form */}
             <div className="lg:col-span-3">
-              <div className="p-8 md:p-10 rounded-3xl bg-card border border-border/50 shadow-soft">
-                <h2 className="text-2xl font-bold text-foreground mb-2">
-                  Send us a message
-                </h2>
-                <p className="text-muted-foreground mb-8">
-                  Fill out the form below and we'll get back to you shortly.
-                </p>
+              <div className="p-8 md:p-10 rounded-3xl bg-card/50 backdrop-blur-sm border border-border/50 shadow-soft relative overflow-hidden">
+                {/* Form glow */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl" />
 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
+                <div className="relative">
+                  <h2 className="text-2xl font-bold text-foreground mb-2">
+                    Send us a message
+                  </h2>
+                  <p className="text-muted-foreground mb-8">
+                    Fill out the form below and we'll get back to you shortly.
+                  </p>
+
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <Label htmlFor="name">Full Name</Label>
+                        <Input
+                          id="name"
+                          name="name"
+                          placeholder="John Smith"
+                          value={formData.name}
+                          onChange={handleChange}
+                          required
+                          className="h-12 bg-background/50 border-border/50 focus:border-accent"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="email">Email Address</Label>
+                        <Input
+                          id="email"
+                          name="email"
+                          type="email"
+                          placeholder="john@company.com"
+                          value={formData.email}
+                          onChange={handleChange}
+                          required
+                          className="h-12 bg-background/50 border-border/50 focus:border-accent"
+                        />
+                      </div>
+                    </div>
+
                     <div className="space-y-2">
-                      <Label htmlFor="name">Full Name</Label>
+                      <Label htmlFor="company">Company (Optional)</Label>
                       <Input
-                        id="name"
-                        name="name"
-                        placeholder="John Smith"
-                        value={formData.name}
+                        id="company"
+                        name="company"
+                        placeholder="Your company name"
+                        value={formData.company}
                         onChange={handleChange}
-                        required
-                        className="h-12"
+                        className="h-12 bg-background/50 border-border/50 focus:border-accent"
                       />
                     </div>
+
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email Address</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="john@company.com"
-                        value={formData.email}
+                      <Label htmlFor="message">Message</Label>
+                      <Textarea
+                        id="message"
+                        name="message"
+                        placeholder="Tell us about your project or question..."
+                        value={formData.message}
                         onChange={handleChange}
                         required
-                        className="h-12"
+                        rows={5}
+                        className="resize-none bg-background/50 border-border/50 focus:border-accent"
                       />
                     </div>
-                  </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="company">Company (Optional)</Label>
-                    <Input
-                      id="company"
-                      name="company"
-                      placeholder="Your company name"
-                      value={formData.company}
-                      onChange={handleChange}
-                      className="h-12"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      placeholder="Tell us about your project or question..."
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={5}
-                      className="resize-none"
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    variant="hero"
-                    size="lg"
-                    className="w-full"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? (
-                      "Sending..."
-                    ) : (
-                      <>
-                        Send Message
-                        <Send className="w-4 h-4" />
-                      </>
-                    )}
-                  </Button>
-                </form>
+                    <Button
+                      type="submit"
+                      variant="accent"
+                      size="lg"
+                      className="w-full"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? (
+                        "Sending..."
+                      ) : (
+                        <>
+                          Send Message
+                          <Send className="w-4 h-4" />
+                        </>
+                      )}
+                    </Button>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
@@ -208,10 +220,13 @@ const Contact = () => {
       </section>
 
       {/* Map Section (Placeholder) */}
-      <section className="h-80 bg-secondary/50 relative">
+      <section className="h-80 bg-card/30 relative overflow-hidden">
+        <div className="absolute inset-0 grid-pattern opacity-20" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center">
-            <MapPin className="w-12 h-12 text-accent mx-auto mb-4" />
+            <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4 shadow-accent">
+              <MapPin className="w-8 h-8 text-accent" />
+            </div>
             <p className="text-lg font-medium text-foreground">
               San Francisco, California
             </p>

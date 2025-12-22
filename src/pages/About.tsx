@@ -62,13 +62,20 @@ const About = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="section-padding bg-hero-gradient">
-        <div className="container-tight mx-auto text-center">
+      <section className="section-padding bg-background relative overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 grid-pattern opacity-30" />
+          <div className="orb orb-1 -top-[300px] right-0" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-glow" />
+        </div>
+
+        <div className="container-tight mx-auto text-center relative">
           <span className="text-sm font-medium text-accent uppercase tracking-wider">
             About Us
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mt-4 mb-6">
-            We're building the future of work
+            We're building the future of <span className="text-gradient">work</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Founded in 2020, Nexus was born from a simple idea: work should be
@@ -79,7 +86,7 @@ const About = () => {
       </section>
 
       {/* Stats */}
-      <section className="py-12 bg-background border-b border-border">
+      <section className="py-12 bg-card/30 border-y border-border/50">
         <div className="container-wide mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat) => (
@@ -97,8 +104,12 @@ const About = () => {
       </section>
 
       {/* Story */}
-      <section className="section-padding bg-background">
-        <div className="container-tight mx-auto">
+      <section className="section-padding bg-background relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="orb orb-3 bottom-0 left-0" style={{ animationDelay: "-5s" }} />
+        </div>
+
+        <div className="container-tight mx-auto relative">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <span className="text-sm font-medium text-accent uppercase tracking-wider">
@@ -129,18 +140,21 @@ const About = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square rounded-3xl bg-gradient-to-br from-secondary to-accent/10 flex items-center justify-center">
-                <div className="text-6xl">🚀</div>
+              <div className="aspect-square rounded-3xl bg-card/50 backdrop-blur-sm border border-border/50 flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-0 bg-glow" />
+                <div className="text-6xl relative z-10">🚀</div>
               </div>
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-2xl bg-accent/20 blur-2xl" />
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-2xl bg-accent/10 blur-2xl" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Values */}
-      <section className="section-padding bg-secondary/30">
-        <div className="container-wide mx-auto">
+      <section className="section-padding bg-card/30 relative overflow-hidden">
+        <div className="absolute inset-0 grid-pattern opacity-20" />
+
+        <div className="container-wide mx-auto relative">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-sm font-medium text-accent uppercase tracking-wider">
               Our Values
@@ -158,7 +172,7 @@ const About = () => {
             {values.map((value) => (
               <div
                 key={value.title}
-                className="p-8 rounded-2xl bg-card border border-border/50 text-center"
+                className="p-8 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 text-center hover:border-accent/30 transition-all duration-300"
               >
                 <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-6">
                   <value.icon className="w-7 h-7 text-accent" />
@@ -176,8 +190,12 @@ const About = () => {
       </section>
 
       {/* Team */}
-      <section className="section-padding bg-background">
-        <div className="container-wide mx-auto">
+      <section className="section-padding bg-background relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="orb orb-2 top-1/2 right-0" style={{ animationDelay: "-10s" }} />
+        </div>
+
+        <div className="container-wide mx-auto relative">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-sm font-medium text-accent uppercase tracking-wider">
               Leadership
@@ -194,7 +212,7 @@ const About = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member) => (
               <div key={member.name} className="text-center group">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-accent/20 to-accent/40 flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-transform">
+                <div className="w-32 h-32 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-accent/20 group-hover:shadow-accent transition-all duration-300 border border-accent/20">
                   <span className="text-4xl font-bold text-accent">
                     {member.name.charAt(0)}
                   </span>

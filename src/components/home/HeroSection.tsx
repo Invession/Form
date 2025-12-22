@@ -4,25 +4,36 @@ import { Link } from "react-router-dom";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-hero-gradient">
-      {/* Background decoration */}
+    <section className="relative overflow-hidden bg-background min-h-[90vh] flex items-center">
+      {/* Animated background */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-1/2 -right-1/4 w-[800px] h-[800px] rounded-full bg-accent/5 blur-3xl" />
-        <div className="absolute -bottom-1/2 -left-1/4 w-[600px] h-[600px] rounded-full bg-secondary blur-3xl" />
+        {/* Grid pattern */}
+        <div className="absolute inset-0 grid-pattern opacity-40" />
+        
+        {/* Animated orbs */}
+        <div className="orb orb-1 -top-[200px] -right-[200px]" style={{ animationDelay: "0s" }} />
+        <div className="orb orb-2 top-1/2 -left-[150px]" style={{ animationDelay: "-7s" }} />
+        <div className="orb orb-3 -bottom-[200px] right-1/4" style={{ animationDelay: "-14s" }} />
+        
+        {/* Center glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-glow animate-pulse" />
+        
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
       </div>
 
       <div className="relative container-wide mx-auto section-padding">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
           <div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card shadow-soft border border-border mb-8 animate-fade-up"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card/50 backdrop-blur-sm shadow-soft border border-border mb-8 animate-fade-up"
             style={{ animationDelay: "0ms" }}
           >
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
             <span className="text-sm font-medium text-muted-foreground">
               New: AI-powered workflows are here
             </span>
-            <ArrowRight className="w-4 h-4 text-muted-foreground" />
+            <ArrowRight className="w-4 h-4 text-accent" />
           </div>
 
           {/* Headline */}
@@ -48,13 +59,13 @@ export function HeroSection() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up"
             style={{ animationDelay: "300ms" }}
           >
-            <Button variant="hero" size="xl" asChild>
+            <Button variant="accent" size="xl" asChild className="animate-glow-pulse">
               <Link to="/contact">
                 Start Free Trial
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </Button>
-            <Button variant="outline" size="xl">
+            <Button variant="outline" size="xl" className="border-border/50 backdrop-blur-sm">
               <Play className="w-5 h-5" />
               Watch Demo
             </Button>
@@ -62,17 +73,17 @@ export function HeroSection() {
 
           {/* Social Proof */}
           <div
-            className="mt-16 animate-fade-up"
+            className="mt-20 animate-fade-up"
             style={{ animationDelay: "400ms" }}
           >
             <p className="text-sm text-muted-foreground mb-6">
               Trusted by industry-leading teams
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-8 opacity-60">
+            <div className="flex flex-wrap items-center justify-center gap-8 opacity-50">
               {["Stripe", "Vercel", "Linear", "Notion", "Figma"].map((company) => (
                 <div
                   key={company}
-                  className="text-xl font-semibold text-muted-foreground/80"
+                  className="text-xl font-semibold text-muted-foreground"
                 >
                   {company}
                 </div>

@@ -20,8 +20,8 @@ export function Navbar() {
       <nav className="container-wide mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-accent-gradient flex items-center justify-center">
+          <Link to="/" className="flex items-center gap-2 group">
+            <div className="w-8 h-8 rounded-lg bg-accent-gradient flex items-center justify-center shadow-accent group-hover:shadow-glow transition-shadow duration-300">
               <span className="text-accent-foreground font-bold text-lg">N</span>
             </div>
             <span className="font-semibold text-xl text-foreground">Nexus</span>
@@ -36,7 +36,7 @@ export function Navbar() {
                 className={cn(
                   "text-sm font-medium transition-colors duration-200",
                   location.pathname === link.href
-                    ? "text-foreground"
+                    ? "text-accent"
                     : "text-muted-foreground hover:text-foreground"
                 )}
               >
@@ -76,7 +76,7 @@ export function Navbar() {
                   className={cn(
                     "text-base font-medium py-2 transition-colors duration-200",
                     location.pathname === link.href
-                      ? "text-foreground"
+                      ? "text-accent"
                       : "text-muted-foreground"
                   )}
                   onClick={() => setIsOpen(false)}

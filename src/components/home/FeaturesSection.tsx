@@ -41,8 +41,13 @@ const features = [
 
 export function FeaturesSection() {
   return (
-    <section id="features" className="section-padding bg-background">
-      <div className="container-wide mx-auto">
+    <section id="features" className="section-padding bg-background relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute inset-0">
+        <div className="orb orb-2 top-0 right-0" style={{ animationDelay: "-3s" }} />
+      </div>
+
+      <div className="container-wide mx-auto relative">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-sm font-medium text-accent uppercase tracking-wider">
@@ -62,10 +67,10 @@ export function FeaturesSection() {
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className="group p-8 rounded-2xl bg-card-gradient border border-border/50 shadow-soft hover:shadow-medium transition-all duration-300 hover:-translate-y-1"
+              className="group p-8 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 shadow-soft hover:shadow-medium hover:border-accent/30 transition-all duration-300 hover:-translate-y-1"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
+              <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 group-hover:shadow-accent transition-all duration-300">
                 <feature.icon className="w-6 h-6 text-accent" />
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-3">
