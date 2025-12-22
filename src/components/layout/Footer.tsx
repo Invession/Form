@@ -42,7 +42,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="mt-8 pt-8 border-t border-border/50 text-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Form Spotter. All rights reserved.
+            © {new Date().getFullYear()} Form Spotter. All rights reserved. Product and Service of Kimetra.
           </p>
         </div>
       </div>
