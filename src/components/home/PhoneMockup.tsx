@@ -1,100 +1,23 @@
 import { useState, useEffect } from "react";
-import { Check, Bell, BarChart3, Users, Zap } from "lucide-react";
-
-const demoScreens = [
-  {
-    title: "Dashboard",
-    content: (
-      <div className="space-y-3">
-        <div className="flex items-center justify-between">
-          <span className="text-xs text-muted-foreground">Welcome back!</span>
-          <Bell className="w-4 h-4 text-accent" />
-        </div>
-        <div className="grid grid-cols-2 gap-2">
-          <div className="p-2 rounded-lg bg-accent/10 border border-accent/20">
-            <BarChart3 className="w-4 h-4 text-accent mb-1" />
-            <p className="text-[10px] text-muted-foreground">Revenue</p>
-            <p className="text-sm font-semibold text-foreground">$48.2k</p>
-          </div>
-          <div className="p-2 rounded-lg bg-card border border-border/50">
-            <Users className="w-4 h-4 text-accent mb-1" />
-            <p className="text-[10px] text-muted-foreground">Users</p>
-            <p className="text-sm font-semibold text-foreground">2,847</p>
-          </div>
-        </div>
-        <div className="space-y-2">
-          <div className="h-2 w-full bg-accent/20 rounded-full overflow-hidden">
-            <div className="h-full w-3/4 bg-accent-gradient rounded-full animate-pulse" />
-          </div>
-          <div className="h-2 w-full bg-accent/20 rounded-full overflow-hidden">
-            <div className="h-full w-1/2 bg-accent-gradient rounded-full animate-pulse" style={{ animationDelay: "0.5s" }} />
-          </div>
-        </div>
-      </div>
-    ),
-  },
-  {
-    title: "Tasks",
-    content: (
-      <div className="space-y-2">
-        <div className="flex items-center justify-between mb-3">
-          <span className="text-xs font-medium text-foreground">Today's Tasks</span>
-          <span className="text-[10px] text-accent">3/5 done</span>
-        </div>
-        {["Design review", "Team standup", "Ship feature"].map((task, i) => (
-          <div key={task} className="flex items-center gap-2 p-2 rounded-lg bg-card border border-border/50">
-            <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${i < 2 ? "border-accent bg-accent" : "border-muted-foreground"}`}>
-              {i < 2 && <Check className="w-2.5 h-2.5 text-accent-foreground" />}
-            </div>
-            <span className={`text-xs ${i < 2 ? "line-through text-muted-foreground" : "text-foreground"}`}>{task}</span>
-          </div>
-        ))}
-        {["Update docs", "Code review"].map((task) => (
-          <div key={task} className="flex items-center gap-2 p-2 rounded-lg bg-card/50 border border-border/30">
-            <div className="w-4 h-4 rounded-full border-2 border-muted-foreground/50" />
-            <span className="text-xs text-muted-foreground">{task}</span>
-          </div>
-        ))}
-      </div>
-    ),
-  },
-  {
-    title: "Analytics",
-    content: (
-      <div className="space-y-3">
-        <div className="flex items-center justify-between mb-2">
-          <span className="text-xs font-medium text-foreground">Weekly Overview</span>
-          <Zap className="w-4 h-4 text-accent" />
-        </div>
-        <div className="flex items-end justify-between h-20 gap-1">
-          {[40, 65, 45, 80, 55, 90, 70].map((height, i) => (
-            <div key={i} className="flex-1 flex flex-col items-center gap-1">
-              <div 
-                className="w-full bg-accent-gradient rounded-t-sm transition-all duration-500"
-                style={{ height: `${height}%`, animationDelay: `${i * 0.1}s` }}
-              />
-              <span className="text-[8px] text-muted-foreground">
-                {["M", "T", "W", "T", "F", "S", "S"][i]}
-              </span>
-            </div>
-          ))}
-        </div>
-        <div className="p-2 rounded-lg bg-accent/10 border border-accent/20">
-          <p className="text-[10px] text-muted-foreground">Growth</p>
-          <p className="text-sm font-semibold text-accent">+24.5%</p>
-        </div>
-      </div>
-    ),
-  },
-];
+import { Activity, Check, AlertTriangle } from "lucide-react";
 
 export function PhoneMockup() {
-  const [currentScreen, setCurrentScreen] = useState(0);
+  const [repCount, setRepCount] = useState(0);
+  const [phase, setPhase] = useState<"down" | "up">("down");
+  const [formScore, setFormScore] = useState(94);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentScreen((prev) => (prev + 1) % demoScreens.length);
-    }, 3000);
+      setPhase((prev) => {
+        if (prev === "down") {
+          return "up";
+        } else {
+          setRepCount((r) => (r + 1) % 10);
+          setFormScore(Math.floor(Math.random() * 10) + 90);
+          return "down";
+        }
+      });
+    }, 1200);
     return () => clearInterval(interval);
   }, []);
 
@@ -125,38 +48,179 @@ export function PhoneMockup() {
           {/* Screen content */}
           <div className="absolute inset-0 pt-10 px-4 pb-8">
             {/* App header */}
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-6 h-6 rounded-lg bg-accent-gradient flex items-center justify-center">
-                <span className="text-accent-foreground font-bold text-xs">N</span>
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6 rounded-lg bg-accent-gradient flex items-center justify-center">
+                  <span className="text-accent-foreground font-bold text-xs">FS</span>
+                </div>
+                <span className="text-xs font-semibold text-foreground">
+                  Live Analysis
+                </span>
               </div>
-              <span className="text-xs font-semibold text-foreground">
-                {demoScreens[currentScreen].title}
-              </span>
+              <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-red-500/20 border border-red-500/30">
+                <div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+                <span className="text-[9px] text-red-400 font-medium">REC</span>
+              </div>
             </div>
 
-            {/* Dynamic content */}
-            <div className="animate-fade-in" key={currentScreen}>
-              {demoScreens[currentScreen].content}
+            {/* Exercise video area with stick figure */}
+            <div className="relative h-44 rounded-xl bg-muted/50 border border-border/50 overflow-hidden mb-3">
+              {/* Animated stick figure doing squat */}
+              <svg 
+                viewBox="0 0 100 120" 
+                className="absolute inset-0 w-full h-full p-4"
+              >
+                {/* Head */}
+                <circle 
+                  cx="50" 
+                  cy="20" 
+                  r="10" 
+                  fill="none" 
+                  stroke="hsl(var(--accent))" 
+                  strokeWidth="2"
+                />
+                
+                {/* Body */}
+                <line 
+                  x1="50" 
+                  y1="30" 
+                  x2="50" 
+                  y2={phase === "down" ? "60" : "65"} 
+                  stroke="hsl(var(--accent))" 
+                  strokeWidth="2"
+                  className="transition-all duration-500"
+                />
+                
+                {/* Left arm */}
+                <line 
+                  x1="50" 
+                  y1="35" 
+                  x2={phase === "down" ? "30" : "25"} 
+                  y2={phase === "down" ? "55" : "45"} 
+                  stroke="hsl(var(--accent))" 
+                  strokeWidth="2"
+                  className="transition-all duration-500"
+                />
+                
+                {/* Right arm */}
+                <line 
+                  x1="50" 
+                  y1="35" 
+                  x2={phase === "down" ? "70" : "75"} 
+                  y2={phase === "down" ? "55" : "45"} 
+                  stroke="hsl(var(--accent))" 
+                  strokeWidth="2"
+                  className="transition-all duration-500"
+                />
+                
+                {/* Left upper leg */}
+                <line 
+                  x1="50" 
+                  y1={phase === "down" ? "60" : "65"} 
+                  x2={phase === "down" ? "35" : "40"} 
+                  y2={phase === "down" ? "80" : "90"} 
+                  stroke="hsl(var(--accent))" 
+                  strokeWidth="2"
+                  className="transition-all duration-500"
+                />
+                
+                {/* Left lower leg */}
+                <line 
+                  x1={phase === "down" ? "35" : "40"} 
+                  y1={phase === "down" ? "80" : "90"} 
+                  x2={phase === "down" ? "30" : "40"} 
+                  y2="110" 
+                  stroke="hsl(var(--accent))" 
+                  strokeWidth="2"
+                  className="transition-all duration-500"
+                />
+                
+                {/* Right upper leg */}
+                <line 
+                  x1="50" 
+                  y1={phase === "down" ? "60" : "65"} 
+                  x2={phase === "down" ? "65" : "60"} 
+                  y2={phase === "down" ? "80" : "90"} 
+                  stroke="hsl(var(--accent))" 
+                  strokeWidth="2"
+                  className="transition-all duration-500"
+                />
+                
+                {/* Right lower leg */}
+                <line 
+                  x1={phase === "down" ? "65" : "60"} 
+                  y1={phase === "down" ? "80" : "90"} 
+                  x2={phase === "down" ? "70" : "60"} 
+                  y2="110" 
+                  stroke="hsl(var(--accent))" 
+                  strokeWidth="2"
+                  className="transition-all duration-500"
+                />
+
+                {/* Joint indicators */}
+                <circle cx="50" cy="35" r="3" fill="hsl(var(--accent))" className="opacity-60" />
+                <circle cx={phase === "down" ? "35" : "40"} cy={phase === "down" ? "80" : "90"} r="3" fill="hsl(142, 76%, 36%)" className="transition-all duration-500" />
+                <circle cx={phase === "down" ? "65" : "60"} cy={phase === "down" ? "80" : "90"} r="3" fill="hsl(142, 76%, 36%)" className="transition-all duration-500" />
+              </svg>
+
+              {/* Analysis overlay */}
+              <div className="absolute top-2 left-2 right-2 flex justify-between">
+                <div className="px-2 py-1 rounded bg-background/80 backdrop-blur-sm border border-border/50">
+                  <span className="text-[9px] text-muted-foreground">Knee Angle</span>
+                  <p className="text-xs font-semibold text-accent">{phase === "down" ? "92°" : "175°"}</p>
+                </div>
+                <div className="px-2 py-1 rounded bg-background/80 backdrop-blur-sm border border-border/50">
+                  <span className="text-[9px] text-muted-foreground">Hip Depth</span>
+                  <p className="text-xs font-semibold text-green-400">{phase === "down" ? "Parallel" : "Standing"}</p>
+                </div>
+              </div>
+
+              {/* Exercise label */}
+              <div className="absolute bottom-2 left-2 px-2 py-1 rounded bg-background/80 backdrop-blur-sm border border-border/50">
+                <span className="text-[10px] font-medium text-foreground">Barbell Squat</span>
+              </div>
+            </div>
+
+            {/* Stats row */}
+            <div className="grid grid-cols-3 gap-2 mb-3">
+              <div className="p-2 rounded-lg bg-card border border-border/50 text-center">
+                <p className="text-[9px] text-muted-foreground">Reps</p>
+                <p className="text-lg font-bold text-foreground">{repCount}</p>
+              </div>
+              <div className="p-2 rounded-lg bg-card border border-border/50 text-center">
+                <p className="text-[9px] text-muted-foreground">Form</p>
+                <p className="text-lg font-bold text-accent">{formScore}%</p>
+              </div>
+              <div className="p-2 rounded-lg bg-card border border-border/50 text-center">
+                <p className="text-[9px] text-muted-foreground">Tempo</p>
+                <p className="text-lg font-bold text-foreground">2:1</p>
+              </div>
+            </div>
+
+            {/* Form feedback */}
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 p-2 rounded-lg bg-green-500/10 border border-green-500/30">
+                <Check className="w-3.5 h-3.5 text-green-400" />
+                <span className="text-[10px] text-green-400">Depth is on target</span>
+              </div>
+              <div className="flex items-center gap-2 p-2 rounded-lg bg-yellow-500/10 border border-yellow-500/30">
+                <AlertTriangle className="w-3.5 h-3.5 text-yellow-400" />
+                <span className="text-[10px] text-yellow-400">Keep chest more upright</span>
+              </div>
             </div>
           </div>
 
           {/* Bottom navigation */}
           <div className="absolute bottom-0 left-0 right-0 h-14 bg-card/80 backdrop-blur-sm border-t border-border/50 flex items-center justify-around px-6">
-            {[
-              { active: currentScreen === 0 },
-              { active: currentScreen === 1 },
-              { active: currentScreen === 2 },
-            ].map((item, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrentScreen(i)}
-                className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${
-                  item.active ? "bg-accent/20" : "bg-transparent"
-                }`}
-              >
-                <div className={`w-2 h-2 rounded-full ${item.active ? "bg-accent" : "bg-muted-foreground/50"}`} />
-              </button>
-            ))}
+            <button className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center">
+              <Activity className="w-4 h-4 text-accent" />
+            </button>
+            <button className="w-8 h-8 rounded-full flex items-center justify-center">
+              <div className="w-2 h-2 rounded-full bg-muted-foreground/50" />
+            </button>
+            <button className="w-8 h-8 rounded-full flex items-center justify-center">
+              <div className="w-2 h-2 rounded-full bg-muted-foreground/50" />
+            </button>
           </div>
 
           {/* Home indicator */}
@@ -169,7 +233,7 @@ export function PhoneMockup() {
         Live Demo
       </div>
       <div className="absolute -bottom-2 -left-4 px-3 py-1.5 rounded-lg bg-card border border-border/50 text-xs text-foreground shadow-soft animate-float" style={{ animationDelay: "-3s" }}>
-        <span className="text-accent">✓</span> Real-time sync
+        <span className="text-accent">✓</span> AI Form Analysis
       </div>
     </div>
   );
