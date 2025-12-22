@@ -1,83 +1,28 @@
-import { Check, ArrowRight } from "lucide-react";
+import { ArrowRight, Users, Zap, Shield, HeadphonesIcon } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { cn } from "@/lib/utils";
 
-const plans = [
+const features = [
   {
-    name: "Starter",
-    description: "Perfect for small teams getting started",
-    price: "Free",
-    period: "forever",
-    features: [
-      "Up to 5 team members",
-      "Basic project management",
-      "1GB storage",
-      "Email support",
-      "Basic integrations",
-    ],
-    cta: "Get Started",
-    popular: false,
+    icon: Users,
+    title: "Tailored Solutions",
+    description: "Custom packages designed specifically for your team's unique needs and goals.",
   },
   {
-    name: "Professional",
-    description: "For growing teams that need more power",
-    price: "$29",
-    period: "per user/month",
-    features: [
-      "Unlimited team members",
-      "Advanced project management",
-      "100GB storage",
-      "Priority support",
-      "Advanced integrations",
-      "Custom workflows",
-      "Analytics dashboard",
-      "API access",
-    ],
-    cta: "Start Free Trial",
-    popular: true,
+    icon: Zap,
+    title: "Flexible Pricing",
+    description: "Scalable pricing that grows with your business, no hidden fees or surprises.",
   },
   {
-    name: "Enterprise",
-    description: "For large organizations with custom needs",
-    price: "Custom",
-    period: "contact sales",
-    features: [
-      "Everything in Professional",
-      "Unlimited storage",
-      "24/7 dedicated support",
-      "Custom integrations",
-      "Advanced security (SSO, SAML)",
-      "Dedicated account manager",
-      "Custom training",
-      "SLA guarantee",
-    ],
-    cta: "Contact Sales",
-    popular: false,
-  },
-];
-
-const faqs = [
-  {
-    question: "Can I change plans anytime?",
-    answer:
-      "Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate any charges.",
+    icon: Shield,
+    title: "Enterprise Security",
+    description: "Advanced security features including SSO, SAML, and dedicated infrastructure.",
   },
   {
-    question: "What payment methods do you accept?",
-    answer:
-      "We accept all major credit cards (Visa, Mastercard, American Express), PayPal, and bank transfers for annual plans.",
-  },
-  {
-    question: "Is there a free trial?",
-    answer:
-      "Yes! The Professional plan comes with a 14-day free trial. No credit card required to start.",
-  },
-  {
-    question: "What happens when my trial ends?",
-    answer:
-      "You'll be notified before your trial ends. You can choose to upgrade to a paid plan or continue with the free Starter plan.",
+    icon: HeadphonesIcon,
+    title: "Dedicated Support",
+    description: "24/7 priority support with a dedicated account manager for your team.",
   },
 ];
 
@@ -98,105 +43,72 @@ const Pricing = () => {
             Pricing
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mt-4 mb-6">
-            Simple, <span className="text-gradient">transparent</span> pricing
+            Custom solutions for <span className="text-gradient">your team</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Choose the plan that's right for your team. All plans include a
-            14-day free trial.
+            Every business is unique. Let's discuss your needs and create a plan that works perfectly for you.
           </p>
         </div>
       </section>
 
-      {/* Pricing Cards */}
+      {/* Contact CTA Card */}
       <section className="section-padding bg-background -mt-8 relative">
-        <div className="container-wide mx-auto">
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {plans.map((plan) => (
-              <div
-                key={plan.name}
-                className={cn(
-                  "relative p-8 rounded-3xl border transition-all duration-300",
-                  plan.popular
-                    ? "bg-accent/10 border-accent/50 shadow-accent scale-105"
-                    : "bg-card/50 backdrop-blur-sm border-border/50 shadow-soft hover:shadow-medium hover:border-accent/30"
-                )}
-              >
-                {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <span className="px-4 py-1 rounded-full bg-accent-gradient text-accent-foreground text-sm font-medium shadow-accent">
-                      Most Popular
-                    </span>
-                  </div>
-                )}
-
-                <div className="mb-8">
-                  <h3 className="text-xl font-semibold text-foreground mb-2">
-                    {plan.name}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    {plan.description}
-                  </p>
-                </div>
-
-                <div className="mb-8">
-                  <span className="text-4xl font-bold text-foreground">
-                    {plan.price}
-                  </span>
-                  <span className="text-sm text-muted-foreground ml-2">
-                    {plan.period}
-                  </span>
-                </div>
-
-                <ul className="space-y-4 mb-8">
-                  {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                      <span className="text-sm text-muted-foreground">
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-
-                <Button
-                  variant={plan.popular ? "accent" : "outline"}
-                  size="lg"
-                  className={cn("w-full", plan.popular && "animate-glow-pulse")}
-                  asChild
-                >
-                  <Link to="/contact">
-                    {plan.cta}
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </Button>
+        <div className="container-tight mx-auto">
+          <div className="relative p-12 md:p-16 rounded-3xl bg-accent/10 border border-accent/50 shadow-accent text-center">
+            {/* Decorative elements */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+              <div className="w-20 h-20 rounded-full bg-accent-gradient flex items-center justify-center shadow-accent animate-glow-pulse">
+                <Users className="w-10 h-10 text-accent-foreground" />
               </div>
-            ))}
+            </div>
+
+            <div className="mt-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Let's Talk
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-xl mx-auto mb-8 leading-relaxed">
+                Our team will work with you to understand your requirements and create a customized pricing plan that fits your budget and scale.
+              </p>
+
+              <Button variant="accent" size="xl" asChild className="animate-glow-pulse">
+                <Link to="/contact">
+                  Contact Our Team
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* Features Grid */}
       <section className="section-padding bg-card/30 relative overflow-hidden">
         <div className="absolute inset-0 grid-pattern opacity-20" />
 
-        <div className="container-tight mx-auto relative">
+        <div className="container-wide mx-auto relative">
           <div className="text-center mb-16">
             <span className="text-sm font-medium text-accent uppercase tracking-wider">
-              FAQ
+              What You Get
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4">
-              Frequently asked questions
+              Enterprise-grade features
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {faqs.map((faq) => (
-              <div key={faq.question} className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-accent/30 transition-colors">
-                <h3 className="text-lg font-semibold text-foreground mb-3">
-                  {faq.question}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((feature) => (
+              <div
+                key={feature.title}
+                className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-accent/30 transition-all duration-300 hover:shadow-medium group"
+              >
+                <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4 group-hover:bg-accent/30 transition-colors">
+                  <feature.icon className="w-6 h-6 text-accent" />
+                </div>
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  {feature.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {faq.answer}
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {feature.description}
                 </p>
               </div>
             ))}
@@ -204,7 +116,7 @@ const Pricing = () => {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Bottom CTA */}
       <section className="section-padding bg-background relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="orb orb-2 bottom-0 right-1/4" style={{ animationDelay: "-12s" }} />
@@ -212,7 +124,7 @@ const Pricing = () => {
 
         <div className="container-tight mx-auto text-center relative">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Still have questions?
+            Ready to get started?
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
             Our team is here to help. Get in touch and we'll get back to you
@@ -220,7 +132,7 @@ const Pricing = () => {
           </p>
           <Button variant="accent" size="xl" asChild className="animate-glow-pulse">
             <Link to="/contact">
-              Contact Sales
+              Contact Our Team
               <ArrowRight className="w-5 h-5" />
             </Link>
           </Button>
