@@ -16,11 +16,11 @@ export function CTASection() {
 
           <div className="relative px-8 py-16 md:px-16 md:py-24 text-center">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Ready to transform your <span className="text-gradient">workflow</span>?
+              Ready to elevate your <span className="text-gradient">coaching</span>?
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
-              Start your 14-day free trial today. No credit card required.
-              Cancel anytime.
+              Start helping your clients perfect their form and maximize their results today.
+              Get in touch to learn how we can help.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button
@@ -30,7 +30,7 @@ export function CTASection() {
                 className="animate-glow-pulse"
               >
                 <Link to="/contact">
-                  Get Started Free
+                  Get Started
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </Button>
@@ -40,7 +40,7 @@ export function CTASection() {
                 className="border-border/50"
                 asChild
               >
-                <Link to="/pricing">View Pricing</Link>
+                <Link to="/contact">Talk to Our Team</Link>
               </Button>
             </div>
           </div>

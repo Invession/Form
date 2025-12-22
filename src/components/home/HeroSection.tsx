@@ -33,8 +33,8 @@ export function HeroSection() {
               style={{ animationDelay: "0ms" }}
             >
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              <span className="text-sm font-medium text-muted-foreground">
-                New: AI-powered workflows are here
+            <span className="text-sm font-medium text-muted-foreground">
+                AI-powered form analysis for trainers
               </span>
               <ArrowRight className="w-4 h-4 text-accent" />
             </div>
@@ -44,8 +44,8 @@ export function HeroSection() {
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 animate-fade-up"
               style={{ animationDelay: "100ms" }}
             >
-              Build better products,{" "}
-              <span className="text-gradient">faster together</span>
+              Perfect every rep,{" "}
+              <span className="text-gradient">maximize results</span>
             </h1>
 
             {/* Subheadline */}
@@ -53,8 +53,8 @@ export function HeroSection() {
               className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed animate-fade-up"
               style={{ animationDelay: "200ms" }}
             >
-              The all-in-one platform that helps teams collaborate, ship features,
-              and deliver exceptional experiences to customers worldwide.
+              The smart platform for athletic trainers to analyze client form,
+              track progress, and deliver precise coaching advice for every set.
             </p>
 
             {/* CTAs */}
@@ -64,13 +64,13 @@ export function HeroSection() {
             >
               <Button variant="accent" size="xl" asChild className="animate-glow-pulse">
                 <Link to="/contact">
-                  Start Free Trial
+                  Start Training Smarter
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </Button>
               <Button variant="outline" size="xl" className="border-border/50 backdrop-blur-sm">
                 <Play className="w-5 h-5" />
-                Watch Demo
+                See It In Action
               </Button>
             </div>
 
@@ -80,10 +80,10 @@ export function HeroSection() {
               style={{ animationDelay: "400ms" }}
             >
               <p className="text-sm text-muted-foreground mb-4">
-                Trusted by industry-leading teams
+                Trusted by elite trainers and gyms
               </p>
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 opacity-50">
-                {["Stripe", "Vercel", "Linear", "Notion", "Figma"].map((company) => (
+                {["CrossFit Elite", "Peak Performance", "Iron Athletics", "Apex Training", "FitPro"].map((company) => (
                   <div
                     key={company}
                     className="text-lg font-semibold text-muted-foreground"
