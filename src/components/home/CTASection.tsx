@@ -4,20 +4,21 @@ import { Link } from "react-router-dom";
 
 export function CTASection() {
   return (
-    <section className="section-padding bg-background">
-      <div className="container-tight mx-auto">
-        <div className="relative rounded-3xl bg-primary overflow-hidden">
+    <section className="section-padding bg-background relative overflow-hidden">
+      <div className="container-tight mx-auto relative">
+        <div className="relative rounded-3xl bg-card/50 backdrop-blur-sm border border-border/50 overflow-hidden">
           {/* Background decoration */}
           <div className="absolute inset-0">
-            <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-accent/20 blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-accent/10 blur-3xl" />
+            <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-accent/10 blur-3xl animate-pulse" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-accent/5 blur-3xl animate-pulse" style={{ animationDelay: "-2s" }} />
+            <div className="absolute inset-0 grid-pattern opacity-20" />
           </div>
 
           <div className="relative px-8 py-16 md:px-16 md:py-24 text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6">
-              Ready to transform your workflow?
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              Ready to transform your <span className="text-gradient">workflow</span>?
             </h2>
-            <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto mb-10">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
               Start your 14-day free trial today. No credit card required.
               Cancel anytime.
             </p>
@@ -26,6 +27,7 @@ export function CTASection() {
                 variant="accent"
                 size="xl"
                 asChild
+                className="animate-glow-pulse"
               >
                 <Link to="/contact">
                   Get Started Free
@@ -35,7 +37,7 @@ export function CTASection() {
               <Button
                 variant="outline"
                 size="xl"
-                className="bg-transparent border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+                className="border-border/50"
                 asChild
               >
                 <Link to="/pricing">View Pricing</Link>
