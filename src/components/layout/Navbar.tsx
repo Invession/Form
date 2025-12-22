@@ -22,9 +22,9 @@ export function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <div className="w-8 h-8 rounded-lg bg-accent-gradient flex items-center justify-center shadow-accent group-hover:shadow-glow transition-shadow duration-300">
-              <span className="text-accent-foreground font-bold text-lg">N</span>
+              <span className="text-accent-foreground font-bold text-lg">F</span>
             </div>
-            <span className="font-semibold text-xl text-foreground">Nexus</span>
+            <span className="font-semibold text-xl text-foreground">Form Spotter</span>
           </Link>
 
           {/* Desktop Navigation */}

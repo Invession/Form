@@ -28,29 +28,6 @@ const values = [
   },
 ];
 
-const team = [
-  {
-    name: "Alexandra Wright",
-    role: "CEO & Co-founder",
-    bio: "Former VP at Google, 15+ years in tech leadership.",
-  },
-  {
-    name: "Michael Chen",
-    role: "CTO & Co-founder",
-    bio: "Ex-Stripe engineer, passionate about scalable systems.",
-  },
-  {
-    name: "Sarah Johnson",
-    role: "VP of Product",
-    bio: "Previously led product at Notion and Figma.",
-  },
-  {
-    name: "David Park",
-    role: "VP of Engineering",
-    bio: "Built engineering teams at three successful startups.",
-  },
-];
-
 const stats = [
   { value: "10K+", label: "Active Teams" },
   { value: "50M+", label: "Tasks Completed" },
@@ -78,7 +55,7 @@ const About = () => {
             We're building the future of <span className="text-gradient">work</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Founded in 2020, Nexus was born from a simple idea: work should be
+            Founded in 2020, Form Spotter was born from a simple idea: work should be
             easier. Today, we help thousands of teams collaborate better and
             achieve more.
           </p>
@@ -120,7 +97,7 @@ const About = () => {
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Nexus started when our founders, working at a fast-growing
+                  Form Spotter started when our founders, working at a fast-growing
                   startup, realized that the tools meant to help them were
                   actually slowing them down. Disconnected apps, endless
                   context-switching, and information silos were killing
@@ -129,7 +106,7 @@ const About = () => {
                 <p>
                   They set out to build something different: a unified platform
                   that brings teams together, automates the mundane, and lets
-                  people focus on work that matters. Three years later, Nexus is
+                  people focus on work that matters. Three years later, Form Spotter is
                   trusted by over 10,000 teams worldwide.
                 </p>
                 <p>
@@ -183,47 +160,6 @@ const About = () => {
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {value.description}
                 </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team */}
-      <section className="section-padding bg-background relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="orb orb-2 top-1/2 right-0" style={{ animationDelay: "-10s" }} />
-        </div>
-
-        <div className="container-wide mx-auto relative">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-sm font-medium text-accent uppercase tracking-wider">
-              Leadership
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
-              Meet the team behind Nexus
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Experienced leaders from the world's best companies, united by a
-              shared vision.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member) => (
-              <div key={member.name} className="text-center group">
-                <div className="w-32 h-32 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-accent/20 group-hover:shadow-accent transition-all duration-300 border border-accent/20">
-                  <span className="text-4xl font-bold text-accent">
-                    {member.name.charAt(0)}
-                  </span>
-                </div>
-                <h3 className="text-lg font-semibold text-foreground">
-                  {member.name}
-                </h3>
-                <p className="text-accent font-medium text-sm mb-2">
-                  {member.role}
-                </p>
-                <p className="text-muted-foreground text-sm">{member.bio}</p>
               </div>
             ))}
           </div>

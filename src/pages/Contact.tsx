@@ -11,8 +11,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "hello@nexus.com",
-    href: "mailto:hello@nexus.com",
+    value: "hello@formspotter.com",
+    href: "mailto:hello@formspotter.com",
   },
   {
     icon: Phone,
