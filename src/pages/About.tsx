@@ -4,35 +4,35 @@ import { Target, Heart, Lightbulb, Users } from "lucide-react";
 const values = [
   {
     icon: Target,
-    title: "Mission-Driven",
+    title: "Precision First",
     description:
-      "We exist to empower teams to do their best work. Every decision we make is guided by this purpose.",
+      "Every rep matters. Our AI ensures trainers can spot form issues that lead to injury or slow progress.",
   },
   {
     icon: Heart,
-    title: "Customer Obsessed",
+    title: "Trainer Focused",
     description:
-      "Our customers are at the heart of everything we do. Their success is our success.",
+      "Built by trainers, for trainers. We understand the challenges of coaching multiple clients effectively.",
   },
   {
     icon: Lightbulb,
-    title: "Innovation First",
+    title: "AI Innovation",
     description:
-      "We constantly push boundaries and challenge the status quo to deliver breakthrough solutions.",
+      "Cutting-edge computer vision and machine learning to analyze movement patterns in real-time.",
   },
   {
     icon: Users,
-    title: "Stronger Together",
+    title: "Client Success",
     description:
-      "We believe in the power of collaboration—both within our team and with our customers.",
+      "Help your clients achieve their goals faster with data-driven insights and personalized feedback.",
   },
 ];
 
 const stats = [
-  { value: "10K+", label: "Active Teams" },
-  { value: "50M+", label: "Tasks Completed" },
-  { value: "99.9%", label: "Uptime" },
-  { value: "150+", label: "Countries" },
+  { value: "5K+", label: "Active Trainers" },
+  { value: "2M+", label: "Reps Analyzed" },
+  { value: "40%", label: "Faster Progress" },
+  { value: "95%", label: "Form Accuracy" },
 ];
 
 const About = () => {
@@ -52,12 +52,12 @@ const About = () => {
             About Us
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mt-4 mb-6">
-            We're building the future of <span className="text-gradient">work</span>
+            We're building the future of <span className="text-gradient">athletic training</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Founded in 2020, Form Spotter was born from a simple idea: work should be
-            easier. Today, we help thousands of teams collaborate better and
-            achieve more.
+            Founded in 2020, Form Spotter was born from a simple idea: every athlete
+            deserves perfect form. Today, we help thousands of trainers deliver
+            precise, AI-powered coaching.
           </p>
         </div>
       </section>
@@ -93,33 +93,32 @@ const About = () => {
                 Our Story
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
-                From frustration to innovation
+                From the gym floor to AI innovation
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Form Spotter started when our founders, working at a fast-growing
-                  startup, realized that the tools meant to help them were
-                  actually slowing them down. Disconnected apps, endless
-                  context-switching, and information silos were killing
-                  productivity.
+                  Form Spotter started when our founders, experienced strength coaches
+                  and software engineers, saw how hard it was to catch every form
+                  breakdown when training multiple clients. Injuries were happening,
+                  and progress was stalling.
                 </p>
                 <p>
-                  They set out to build something different: a unified platform
-                  that brings teams together, automates the mundane, and lets
-                  people focus on work that matters. Three years later, Form Spotter is
-                  trusted by over 10,000 teams worldwide.
+                  They combined their expertise to build an AI that could analyze
+                  movement patterns in real-time, giving trainers superhuman vision
+                  to spot issues before they cause problems. Today, Form Spotter is
+                  trusted by over 5,000 trainers worldwide.
                 </p>
                 <p>
-                  Today, we're a diverse team of 150+ people across 20
-                  countries, united by our mission to make work feel less like
-                  work.
+                  We're a passionate team of athletes, coaches, and engineers,
+                  united by our mission to help every client train safer and
+                  achieve better results.
                 </p>
               </div>
             </div>
             <div className="relative">
               <div className="aspect-square rounded-3xl bg-card/50 backdrop-blur-sm border border-border/50 flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-glow" />
-                <div className="text-6xl relative z-10">🚀</div>
+                <div className="text-6xl relative z-10">🏋️</div>
               </div>
               <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-2xl bg-accent/10 blur-2xl" />
             </div>
