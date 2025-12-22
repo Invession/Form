@@ -3,26 +3,26 @@ import { Star } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "Nexus has completely transformed how our team collaborates. We've cut our project delivery time in half.",
-    author: "Sarah Chen",
-    role: "VP of Engineering",
-    company: "TechCorp",
+      "This platform has revolutionized how I coach. My clients are seeing 40% faster strength gains with the precise form feedback.",
+    author: "Mike Torres",
+    role: "Head Strength Coach",
+    company: "Elite Athletics",
     rating: 5,
   },
   {
     quote:
-      "The best platform we've used. The AI features alone have saved us countless hours every week.",
-    author: "Marcus Johnson",
-    role: "Product Manager",
-    company: "InnovateLab",
+      "The AI form analysis catches things I might miss. It's like having an extra set of expert eyes on every single rep.",
+    author: "Sarah Mitchell",
+    role: "Personal Trainer",
+    company: "FitPro Gym",
     rating: 5,
   },
   {
     quote:
-      "Finally, a tool that actually understands how modern teams work. Couldn't imagine going back.",
-    author: "Emily Rodriguez",
-    role: "Design Director",
-    company: "CreativeHQ",
+      "Finally, a tool that helps me scale my coaching without sacrificing quality. My clients love the detailed feedback.",
+    author: "James Chen",
+    role: "CrossFit Coach",
+    company: "Iron Box CF",
     rating: 5,
   },
 ];
@@ -43,10 +43,10 @@ export function TestimonialsSection() {
             Testimonials
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6">
-            Loved by teams worldwide
+            Trusted by top trainers
           </h2>
           <p className="text-lg text-muted-foreground">
-            Join thousands of teams who have already transformed their workflow.
+            Join hundreds of athletic trainers who are transforming how they coach.
           </p>
         </div>
 

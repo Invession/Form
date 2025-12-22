@@ -1,41 +1,41 @@
-import { Zap, Shield, Users, BarChart3, Globe, Sparkles } from "lucide-react";
+import { Video, Target, TrendingUp, BarChart3, MessageSquare, Sparkles } from "lucide-react";
 
 const features = [
   {
-    icon: Zap,
-    title: "Lightning Fast",
+    icon: Video,
+    title: "Real-Time Form Analysis",
     description:
-      "Built for speed. Our platform is optimized for performance, so you can focus on what matters most.",
+      "AI-powered video analysis that identifies form issues and provides instant feedback on every rep.",
   },
   {
-    icon: Shield,
-    title: "Enterprise Security",
+    icon: Target,
+    title: "Precision Coaching",
     description:
-      "Bank-grade security with SOC 2 compliance, end-to-end encryption, and advanced access controls.",
+      "Deliver targeted advice with detailed breakdowns of movement patterns and muscle engagement.",
   },
   {
-    icon: Users,
-    title: "Team Collaboration",
+    icon: TrendingUp,
+    title: "Progress Tracking",
     description:
-      "Real-time collaboration tools that keep everyone aligned and moving in the same direction.",
+      "Monitor client improvements over time with visual progress reports and performance metrics.",
   },
   {
     icon: BarChart3,
-    title: "Advanced Analytics",
+    title: "Set & Rep Analytics",
     description:
-      "Deep insights into your workflow with custom dashboards and automated reporting.",
+      "Deep insights into workout performance including tempo, range of motion, and fatigue patterns.",
   },
   {
-    icon: Globe,
-    title: "Global Scale",
+    icon: MessageSquare,
+    title: "Client Communication",
     description:
-      "Infrastructure that scales with you, from startup to enterprise, anywhere in the world.",
+      "Send personalized feedback and coaching cues directly to clients through the app.",
   },
   {
     icon: Sparkles,
-    title: "AI-Powered",
+    title: "AI Recommendations",
     description:
-      "Smart automation and AI assistance that learns your patterns and accelerates your work.",
+      "Smart suggestions for exercise modifications and corrections based on individual client data.",
   },
 ];
 
@@ -54,11 +54,11 @@ export function FeaturesSection() {
             Features
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6">
-            Everything you need to succeed
+            Everything you need to coach smarter
           </h2>
           <p className="text-lg text-muted-foreground">
-            Powerful features designed to help teams work smarter, move faster,
-            and achieve more together.
+            Powerful tools designed to help athletic trainers deliver precise,
+            data-driven coaching for every client.
           </p>
         </div>
 
