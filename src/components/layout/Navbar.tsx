@@ -45,15 +45,6 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-4">
-            <Button variant="ghost" size="sm">
-              Sign in
-            </Button>
-            <Button variant="accent" size="sm">
-              Get Started
-            </Button>
-          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -84,12 +75,6 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <div className="flex flex-col gap-2 pt-4 border-t border-border/50">
-                <Button variant="ghost" className="justify-start">
-                  Sign in
-                </Button>
-                <Button variant="accent">Get Started</Button>
-              </div>
             </div>
           </div>
         )}
