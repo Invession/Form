@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import spotformLogo from "@/assets/spotform-logo.png";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -21,9 +21,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg bg-accent-gradient flex items-center justify-center shadow-accent group-hover:shadow-glow transition-shadow duration-300">
-              <span className="text-accent-foreground font-bold text-lg">F</span>
-            </div>
+            <img src={spotformLogo} alt="Form Spotter" className="h-8 w-auto" />
             <span className="font-semibold text-xl text-foreground">Form Spotter</span>
           </Link>
 
