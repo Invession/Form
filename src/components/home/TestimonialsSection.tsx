@@ -4,25 +4,22 @@ const testimonials = [
   {
     quote:
       "This platform has revolutionized how I coach. My clients are seeing 40% faster strength gains with the precise form feedback.",
-    author: "Mike Torres",
-    role: "Head Strength Coach",
-    company: "Elite Athletics",
+    author: "M.T.",
+    role: "Strength Coach",
     rating: 5,
   },
   {
     quote:
       "The AI form analysis catches things I might miss. It's like having an extra set of expert eyes on every single rep.",
-    author: "Sarah Mitchell",
+    author: "S.M.",
     role: "Personal Trainer",
-    company: "FitPro Gym",
     rating: 5,
   },
   {
     quote:
       "Finally, a tool that helps me scale my coaching without sacrificing quality. My clients love the detailed feedback.",
-    author: "James Chen",
+    author: "J.C.",
     role: "CrossFit Coach",
-    company: "Iron Box CF",
     rating: 5,
   },
 ];
@@ -84,7 +81,7 @@ export function TestimonialsSection() {
                     {testimonial.author}
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    {testimonial.role}, {testimonial.company}
+                    {testimonial.role}
                   </p>
                 </div>
               </div>
