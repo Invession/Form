@@ -29,7 +29,7 @@ const values = [
 ];
 
 const stats = [
-  { value: "5K+", label: "Active Trainers" },
+  { value: "100+", label: "Active Trainers" },
   { value: "2M+", label: "Reps Analyzed" },
   { value: "40%", label: "Faster Progress" },
   { value: "95%", label: "Form Accuracy" },
@@ -55,8 +55,8 @@ const About = () => {
             We're building the future of <span className="text-gradient">athletic training</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Founded in 2020, Form Spotter was born from a simple idea: every athlete
-            deserves perfect form. Today, we help thousands of trainers deliver
+            Founded in 2025, Form Spotter was born from a simple idea: every athlete
+            deserves perfect form. Today, we help trainers deliver
             precise, AI-powered coaching.
           </p>
         </div>
@@ -106,7 +106,7 @@ const About = () => {
                   They combined their expertise to build an AI that could analyze
                   movement patterns in real-time, giving trainers superhuman vision
                   to spot issues before they cause problems. Today, Form Spotter is
-                  trusted by over 5,000 trainers worldwide.
+                  trusted by trainers worldwide.
                 </p>
                 <p>
                   We're a passionate team of athletes, coaches, and engineers,

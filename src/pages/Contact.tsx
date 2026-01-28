@@ -11,19 +11,19 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "hello@formspotter.com",
-    href: "mailto:hello@formspotter.com",
+    value: "info@formspotter.com",
+    href: "mailto:info@formspotter.com",
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+1 (555) 123-4567",
-    href: "tel:+15551234567",
+    value: "+1 (315) 882-5458",
+    href: "tel:+13158825458",
   },
   {
     icon: MapPin,
     label: "Office",
-    value: "San Francisco, CA",
+    value: "New York, NY",
     href: "#",
   },
   {
@@ -228,10 +228,10 @@ const Contact = () => {
               <MapPin className="w-8 h-8 text-accent" />
             </div>
             <p className="text-lg font-medium text-foreground">
-              San Francisco, California
+              New York, NY
             </p>
             <p className="text-muted-foreground">
-              123 Innovation Street, Suite 400
+              United States
             </p>
           </div>
         </div>
