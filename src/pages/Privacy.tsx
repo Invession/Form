@@ -17,7 +17,7 @@ const Privacy = () => {
           </h1>
 
           <div className="prose prose-invert max-w-none space-y-8 text-muted-foreground">
-            <p className="text-sm">Effective date: [To be announced]</p>
+            <p className="text-sm">Effective date: March 23, 2026</p>
 
             <div>
               <h2 className="text-xl font-semibold text-foreground mb-3">1. Scope</h2>
