@@ -39,10 +39,18 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-8 pt-8 border-t border-border/50 text-center">
+        <div className="mt-8 pt-8 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Form Spotter. All rights reserved. Product and Service of Kimetra.
           </p>
+          <div className="flex items-center gap-6">
+            <Link to="/terms" className="text-sm text-muted-foreground hover:text-accent transition-colors">
+              Terms of Service
+            </Link>
+            <Link to="/privacy" className="text-sm text-muted-foreground hover:text-accent transition-colors">
+              Privacy Policy
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
