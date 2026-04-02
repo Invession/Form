@@ -68,10 +68,6 @@ export function HeroSection() {
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </Button>
-              <Button variant="outline" size="xl" className="border-border/50 backdrop-blur-sm">
-                <Play className="w-5 h-5" />
-                See It In Action
-              </Button>
             </div>
 
             {/* Social Proof */}
