@@ -237,9 +237,6 @@ export function PhoneMockup() {
       </div>
 
       {/* Floating elements */}
-      <div className="absolute -top-4 -right-4 px-3 py-1.5 rounded-full bg-accent-gradient text-accent-foreground text-xs font-medium shadow-accent animate-float">
-        Live Demo
-      </div>
       <div className="absolute -bottom-2 -left-4 px-3 py-1.5 rounded-lg bg-card border border-border/50 text-xs text-foreground shadow-soft animate-float" style={{ animationDelay: "-3s" }}>
         <span className="text-accent">✓</span> AI Form Analysis
       </div>
