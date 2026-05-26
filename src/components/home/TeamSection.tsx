@@ -9,12 +9,12 @@ const team = [
   {
     name: "Aidan McKnight",
     role: "Co-CEO",
-    bio: "Leads technology and product; built FormSpotter to help his dad train safely.",
+    bio: "Machine learning specialist across computer vision, NLP, and reinforcement learning. Builds and trains the pose-estimation models that power FormSpotter. Started it to help his dad train safely.",
   },
   {
     name: "Isaac Austin",
     role: "Lead Architect",
-    bio: "Previously at Microsoft Azure; leads system architecture.",
+    bio: "Cloud engineering at Microsoft Azure and independent app development. Leads FormSpotter's multi-platform app and system architecture.",
   },
 ];
 
