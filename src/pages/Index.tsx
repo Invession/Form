@@ -1,15 +1,19 @@
 import { Layout } from "@/components/layout/Layout";
 import { HeroSection } from "@/components/home/HeroSection";
+import { WhatWeDoSection } from "@/components/home/WhatWeDoSection";
 import { FeaturesSection } from "@/components/home/FeaturesSection";
-import { TestimonialsSection } from "@/components/home/TestimonialsSection";
+import { ProductSection } from "@/components/home/ProductSection";
+import { TeamSection } from "@/components/home/TeamSection";
 import { CTASection } from "@/components/home/CTASection";
 
 const Index = () => {
   return (
     <Layout>
       <HeroSection />
+      <WhatWeDoSection />
       <FeaturesSection />
-      <TestimonialsSection />
+      <ProductSection />
+      <TeamSection />
       <CTASection />
     </Layout>
   );

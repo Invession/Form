@@ -16,8 +16,8 @@ const features = [
   },
   {
     icon: Shield,
-    title: "HIPAA Compliant",
-    description: "Enterprise-grade security to protect your clients' health and training data.",
+    title: "Secure, privacy-first data handling",
+    description: "Client videos and training data are handled with privacy-first practices and modern security controls.",
   },
   {
     icon: HeadphonesIcon,

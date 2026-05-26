@@ -28,18 +28,6 @@ export function PhoneMockup() {
       
       {/* Phone frame */}
       <div className="relative w-[280px] h-[560px] bg-gradient-to-b from-muted/80 to-muted/40 rounded-[3rem] p-2 shadow-medium border border-border/50 backdrop-blur-sm">
-        {/* Launch app overlay */}
-        <a
-          href="https://app.formspotter.ai/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="absolute inset-0 z-20 flex items-center justify-center rounded-[3rem] group"
-        >
-          <div className="absolute inset-0 bg-background/60 backdrop-blur-sm rounded-[3rem]" />
-          <div className="relative px-6 py-3 bg-accent-gradient rounded-full shadow-accent transition-transform group-hover:scale-105">
-            <span className="text-accent-foreground font-bold text-lg tracking-wide">Launch App</span>
-          </div>
-        </a>
         
         {/* Inner bezel */}
         <div className="w-full h-full bg-background rounded-[2.5rem] overflow-hidden relative">
