@@ -16,11 +16,19 @@ export function CTASection() {
 
           <div className="relative px-8 py-16 md:px-16 md:py-24 text-center">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Ready to elevate your <span className="text-gradient">coaching</span>?
+              Get in touch
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
-              Start helping your clients perfect their form and maximize their results today.
-              Get in touch to learn how we can help.
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-4">
+              Talk to the team about pilots, trainer onboarding, or partnerships.
+            </p>
+            <p className="text-lg text-foreground max-w-2xl mx-auto mb-10">
+              Email:{" "}
+              <a
+                href="mailto:phillip@formspotter.ai"
+                className="text-accent hover:underline font-medium"
+              >
+                phillip@formspotter.ai
+              </a>
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button
@@ -29,10 +37,10 @@ export function CTASection() {
                 asChild
                 className="animate-glow-pulse"
               >
-                <Link to="/contact">
-                  Get Started
+                <a href="mailto:phillip@formspotter.ai">
+                  Email the team
                   <ArrowRight className="w-5 h-5" />
-                </Link>
+                </a>
               </Button>
               <Button
                 variant="outline"
@@ -40,7 +48,7 @@ export function CTASection() {
                 className="border-border/50"
                 asChild
               >
-                <Link to="/contact">Talk to Our Team</Link>
+                <Link to="/contact">Contact form</Link>
               </Button>
             </div>
           </div>

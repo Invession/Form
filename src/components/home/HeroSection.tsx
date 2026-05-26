@@ -70,25 +70,6 @@ export function HeroSection() {
               </Button>
             </div>
 
-            {/* Social Proof */}
-            <div
-              className="mt-12 animate-fade-up"
-              style={{ animationDelay: "400ms" }}
-            >
-              <p className="text-sm text-muted-foreground mb-4">
-                Trusted by elite trainers and gyms
-              </p>
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 opacity-50">
-                {["CrossFit Elite", "Peak Performance", "Iron Athletics", "Apex Training", "FitPro"].map((company) => (
-                  <div
-                    key={company}
-                    className="text-lg font-semibold text-muted-foreground"
-                  >
-                    {company}
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
 
           {/* Right content - Phone mockup */}
