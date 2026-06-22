@@ -1,20 +1,23 @@
-import { User } from "lucide-react";
+import { User, Linkedin } from "lucide-react";
 
 const team = [
   {
     name: "Phillip McKnight",
     role: "Co-CEO",
     bio: "Built FormSpotter's competitive intelligence and B2B prospecting systems; leads commercial, governance, and go-to-market.",
+    linkedin: "https://www.linkedin.com/in/phil-mck/",
   },
   {
     name: "Aidan McKnight",
     role: "Co-CEO",
     bio: "Machine learning specialist across computer vision, NLP, and reinforcement learning. Builds and trains the pose-estimation models that power FormSpotter. Started it to help his dad train safely.",
+    linkedin: "https://www.linkedin.com/in/aidan-a-mcknight/",
   },
   {
     name: "Isaac Austin",
     role: "Lead Architect",
     bio: "Cloud engineering at Microsoft Azure and independent app development. Leads FormSpotter's multi-platform app and system architecture.",
+    linkedin: "https://www.linkedin.com/in/aisaacn/",
   },
 ];
 
@@ -47,6 +50,16 @@ export function TeamSection() {
               <h3 className="text-xl font-semibold text-foreground">{member.name}</h3>
               <p className="text-sm text-accent font-medium mt-1 mb-4">{member.role}</p>
               <p className="text-muted-foreground leading-relaxed text-sm">{member.bio}</p>
+              <a
+                href={member.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${member.name} on LinkedIn`}
+                className="inline-flex items-center gap-2 mt-5 text-sm text-accent hover:text-accent/80 transition-colors"
+              >
+                <Linkedin className="w-4 h-4" />
+                LinkedIn
+              </a>
             </div>
           ))}
         </div>
